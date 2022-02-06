@@ -10,4 +10,5 @@ public class HangmanClass {
         System.out.println(HANGMANPICS[i]);
         i++;
     }
+
 }
