@@ -11,7 +11,13 @@ public class GuessClass {
         String guess = sc.next();
         return (guess.toLowerCase());
     }
-    public static String quess() {
-    }
+    public static void gameResult(boolean isWinner) {
+        if (isWinner){
+            System.out.println("Wygrałeś");
+            return;
+        }
+        System.out.println("Przegrałeś");
+        }
 }
+
 
