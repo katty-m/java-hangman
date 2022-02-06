@@ -1,4 +1,4 @@
-package main.java.pl.edu.agh.hangman;
+package pl.edu.agh.hangman;
 
 import java.util.Locale;
 import java.util.Scanner;

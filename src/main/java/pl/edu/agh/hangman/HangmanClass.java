@@ -8,7 +8,12 @@ public class HangmanClass {
 
     public void printHangman(){
         System.out.println(HANGMANPICS[i]);
+
+    }
+    public void hangStage(){
         i++;
     }
-
+    public boolean gameLost(){
+        return i==6;
+    }
 }

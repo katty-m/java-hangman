@@ -5,12 +5,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 public class Word {
 
     private final ArrayList<String> listOfWords = new ArrayList<>();
     private String word = "";
 
+    private String wordPrint = "";
     public void start() {
         this.readWordList();
         this.drawWord();
@@ -38,12 +40,14 @@ public class Word {
     private void drawWord() {
         Random rand = new Random();
         this.word = listOfWords.get(rand.nextInt(listOfWords.size())).toLowerCase();
+        this.wordPrint = word.replaceAll("\\S", "_");
     }
 
     public boolean checkIfLetterIsInWord(String letter) {
-        String letterLower = letter.toLowerCase();
-        if (word.contains(letterLower)) {
-            word = word.replaceAll(letterLower, "_");
+        //String letterLower = letter.toLowerCase();
+        if (word.contains(letter)) {
+            word = word.replaceAll(letter, "_");
+            //wordPrint = wordPrint.replaceAll("_", letter);
             this.printWord();
             return true;
         }
@@ -52,9 +56,13 @@ public class Word {
     }
 
     public void printWord() {
-        for (int i = 0; i < word.length(); i++) {
-            System.out.print(word.charAt(i));
+        for (int i = 0; i < wordPrint.length(); i++) {
+            System.out.print(wordPrint.charAt(i));
         }
+        System.out.println();
     }
 
+    public boolean isComplete(){
+        return Pattern.matches("^[_\\s]+$",word);
+    }
 }
