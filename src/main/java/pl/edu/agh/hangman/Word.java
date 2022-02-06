@@ -37,14 +37,24 @@ public class Word {
 
     private void drawWord() {
         Random rand = new Random();
-        this.word = listOfWords.get(rand.nextInt(listOfWords.size()));
+        this.word = listOfWords.get(rand.nextInt(listOfWords.size())).toLowerCase();
     }
 
-    public boolean checkIfLetterIsInWord(String word, String letter) {
-        if (word.contains(letter)) {
-
+    public boolean checkIfLetterIsInWord(String letter) {
+        String letterLower = letter.toLowerCase();
+        if (word.contains(letterLower)) {
+            word = word.replaceAll(letterLower, "_");
+            this.printWord();
+            return true;
         }
+        this.printWord();
         return false;
+    }
+
+    public void printWord() {
+        for (int i = 0; i < word.length(); i++) {
+            System.out.print(word.charAt(i));
+        }
     }
 
 }
