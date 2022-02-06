@@ -1,6 +1,5 @@
 package pl.edu.agh.hangman;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class GuessClass {
@@ -11,13 +10,14 @@ public class GuessClass {
         String guess = sc.next();
         return (guess.toLowerCase());
     }
+
     public static void gameResult(boolean isWinner) {
-        if (isWinner){
+        if (isWinner) {
             System.out.println("Wygrałeś");
             return;
         }
         System.out.println("Przegrałeś");
-        }
+    }
 }
 
 

@@ -54,22 +54,22 @@ public class Hangman {
                     "========"
     };
 
-    public static void startGame(){
+    public static void startGame() {
 
         Word word = new Word();
         word.start();
         HangmanClass hangmanClass = new HangmanClass();
         String letter;
         word.printFinalWord();
-        while(true){
+        while (true) {
             word.printWord();
 
-            if(word.isComplete()){
+            if (word.isComplete()) {
                 GuessClass.gameResult(true);
                 break;
             }
 
-            if(hangmanClass.gameLost()){
+            if (hangmanClass.gameLost()) {
                 GuessClass.gameResult(false);
                 word.printFinalWord();
                 break;
@@ -77,12 +77,13 @@ public class Hangman {
 
             letter = GuessClass.quess();
 
-            if(!word.checkIfLetterIsInWord(letter)){
+            if (!word.checkIfLetterIsInWord(letter)) {
                 hangmanClass.hangStage();
             }
             hangmanClass.printHangman();
         }
     }
+
     public static void main(String[] args) {
         startGame();
     }

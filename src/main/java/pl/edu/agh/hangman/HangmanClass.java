@@ -6,14 +6,16 @@ public class HangmanClass {
 
     public int i = 0;
 
-    public void printHangman(){
+    public void printHangman() {
         System.out.println(HANGMANPICS[i]);
 
     }
-    public void hangStage(){
+
+    public void hangStage() {
         i++;
     }
-    public boolean gameLost(){
-        return i==6;
+
+    public boolean gameLost() {
+        return i == 6;
     }
 }
